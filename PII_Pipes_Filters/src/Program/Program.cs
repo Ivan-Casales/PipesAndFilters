@@ -12,16 +12,21 @@ namespace CompAndDel
     {
         static void Main(string[] args)
         {
-            // Ejercicio 2
-            /*
+            
             PictureProvider provider = new PictureProvider();
             IPicture picture = provider.GetPicture(@"../Program/beer.jpg");
 
-            PipeNull pipenull = new PipeNull();
+            PipeNull pipeNull = new PipeNull();
+            
             FilterNegative filterNegative = new FilterNegative();
-            PipeSerial pipeSerialNegative = new PipeSerial(filterNegative, pipenull);
-
             FilterGreyscale filterGreyscale = new FilterGreyscale();
+            
+
+            // Ejercicio 1
+            
+            /*
+            PipeSerial pipeSerialNegative = new PipeSerial(filterNegative, pipeNull);
+
             PipeSerial pipeSerialGrey = new PipeSerial(filterGreyscale, pipeSerialNegative);
 
             picture = pipeSerialGrey.Send(picture);
@@ -32,29 +37,24 @@ namespace CompAndDel
             //-------------------------------------------------------------------------------
 
             // Ejercicio 2
-            /*
-            PictureProvider provider = new PictureProvider();
-            IPicture picture = provider.GetPicture(@"../Program/luke.jpg");
-
-            PipeNull pipeNull = new PipeNull();
-
             FilterSave filterSave = new FilterSave();
+
+            /*
             PipeSerial pipeSerialSave = new PipeSerial(filterSave, pipeNull);
 
-            FilterNegative filterNegative = new FilterNegative();
             PipeSerial pipeSerialNegative = new PipeSerial(filterNegative, pipeSerialSave);
 
             PipeFork pipeForkSave = new PipeFork(pipeSerialNegative, pipeSerialSave);
 
-            FilterGreyscale filterGreyscale = new FilterGreyscale();
             PipeSerial pipeSerialGrey = new PipeSerial(filterGreyscale, pipeForkSave);
 
             picture = pipeSerialGrey.Send(picture);
             */
 
+            //-------------------------------------------------------------------------------
+
             // Ejercicio 3
 
-            
         }
     }
 }

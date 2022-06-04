@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 
 namespace CompAndDel.Filters
 {
@@ -9,7 +8,7 @@ namespace CompAndDel.Filters
     public class FilterSave : IFilter
     {
         // Counter es utilizado para que las imagenes tengan distintos nombres
-        protected int Counter = 0;
+        static public int counter = 0;
 
         /// Un filtro que retorna una imagen luego de ser guardada.
         /// </summary>
@@ -18,10 +17,11 @@ namespace CompAndDel.Filters
         public IPicture Filter(IPicture image)
         {
             PictureProvider p = new PictureProvider();
-            p.SavePicture(image, $"../Program/ModifiedImages/SavedImage{this.Counter}.jpg");
-            this.Counter++;
+            p.SavePicture(image, $"../Program/ModifiedImages/SavedImage{counter}.jpg");
+            counter++;
 
             return image;
         }
+
     }
 }
