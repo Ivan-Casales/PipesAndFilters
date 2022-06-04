@@ -15,7 +15,7 @@ namespace CompAndDel.Filters
         public IPicture Filter(IPicture image)
         {
             var twitter = new TwitterImage();
-            int counter = FilterSave.counter;
+            int counter = FilterSave.counter - 1;
             Console.WriteLine(twitter.PublishToTwitter("Testeo_Twitter", $"../Program/ModifiedImages/SavedImage{counter}.jpg"));
 
             return image;

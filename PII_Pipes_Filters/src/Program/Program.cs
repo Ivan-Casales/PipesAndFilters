@@ -5,7 +5,10 @@ using CompAndDel.Filters;
 namespace CompAndDel
 {
     /// <summary>
-    /// En la carpeta documents se encuentra un png con la solución al Ejercicio 2
+    /// Los distintos ejercicios (tuberias) están comentados. El código que no se 
+    ///     encuentra comentado es porque es reutilizado en varios ejercicios.
+    /// En la carpeta documents (../Documents) se encuentran png's de soluciones 
+    ///     tipo grafos de los ejercicios 2 y 3.
     /// </summary>
 
     class Program
@@ -37,6 +40,7 @@ namespace CompAndDel
             //-------------------------------------------------------------------------------
 
             // Ejercicio 2
+
             FilterSave filterSave = new FilterSave();
 
             /*
@@ -54,7 +58,26 @@ namespace CompAndDel
             //-------------------------------------------------------------------------------
 
             // Ejercicio 3
+            FilterTwitter filterTwitter = new FilterTwitter();
 
+            /*
+            PipeSerial pipeSerialTwitter = new PipeSerial(filterTwitter, pipeNull);
+
+            PipeSerial pipeSerialSave = new PipeSerial(filterSave, pipeSerialTwitter);
+
+            PipeSerial pipeSerialNegative = new PipeSerial(filterNegative, pipeSerialSave);
+
+            PipeFork pipeForkSave = new PipeFork(pipeSerialNegative, pipeSerialSave);
+
+            PipeSerial pipeSerialGrey = new PipeSerial(filterGreyscale, pipeForkSave);
+
+            picture = pipeSerialGrey.Send(picture);
+            */
+
+            //-------------------------------------------------------------------------------
+
+            // Ejercicio 4
+            
         }
     }
 }
